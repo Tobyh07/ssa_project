@@ -1,0 +1,18 @@
+{% extends 'chipin/base.html' %}
+{% load static %}
+
+{% block title %}User Management - ChipIn{% endblock %}
+
+{% block content %}
+    <div class="user-container">
+        <h2>Welcome, {{ request.user.first_name }}</h2>
+        <p>This page is for managing your ChipIn account.</p>
+        
+        <a href="{% url 'chipin:home' %}" class="btn">Go to ChipIn Functions</a>
+
+        <form action="{% url 'users:logout' %}" method="post" style="margin-top: 15px;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+{% endblock %}
