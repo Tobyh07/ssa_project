@@ -1,4 +1,8 @@
 from users.models import Profile
+
+def example_processor(request):
+    return {"example_key": "example_value"}
+
 def user_profile(request):
     if request.user.is_authenticated:
         try:

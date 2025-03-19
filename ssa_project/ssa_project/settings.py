@@ -71,6 +71,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 SESSION_COOKIE_AGE = 1209600  # Two weeks
 SESSION_SAVE_EVERY_REQUEST = True  # Save session with each request
 
@@ -90,6 +91,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'chipin.context_processors.example_processor',
                 'chipin.context_processors.user_profile',
             ],
         },
