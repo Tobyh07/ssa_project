@@ -1,6 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class Event(models.Model):
+    name = models.CharField(max_length=255)
+    date = models.DateField()
+    location = models.CharField(max_length=255)
+
 class Group(models.Model):
     name = models.CharField(max_length=100)
     admin = models.ForeignKey(User, related_name='admin_groups', on_delete=models.CASCADE)
@@ -26,3 +31,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"{self.user.username}: {self.content[:20]}..."  # Show only first 20 chars for preview
+    
